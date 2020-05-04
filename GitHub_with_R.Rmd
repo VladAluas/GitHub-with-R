@@ -1,0 +1,45 @@
+---
+title: "GitHub with R"
+output: html_document
+css: article.css
+---
+
+<div class = "date">
+**`r format(Sys.time(), '%d %b %Y')`**
+</div>
+
+<div class = "tags">
+
+</div>
+
+
+<div class = "time">
+
+</div>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "#>", collapse = TRUE)
+```
+
+________________
+
+</br>
+
+# Introduction
+
+<div class="paragraph">
+
+In this article I would like to discuss a bit about my experience in using GitHub in my R projects and how it helped me. I would also like to discuss how it can be used by a data analysis team to track what they are doing. Also, I will discuss how to install and work with `Git` from `R`
+
+</div> 
+
+# How it helped me
+
+# Installation
+
+# Use
+
+# How it can help your team
+
+# Conclusion
