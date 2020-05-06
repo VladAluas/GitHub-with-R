@@ -32,13 +32,15 @@ hr{
 /* Title
 ----------------------------------------------------------------- */
 .title.toc-ignore{
-	font-size: 34px !important;
+	font-size: 48px !important;
+	color: #FFFFFF;
 	margin: 0 auto;
 	padding-top: 1.5em;
 	padding-bottom: 2em;
 	border: 0;
 	text-align: center;
 	border-bottom-style: double;
+	background-color: #24292F;
 }
 
 /* Body
