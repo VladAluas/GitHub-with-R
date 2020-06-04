@@ -25,52 +25,116 @@ ________________
 
 </br>
 
-# Introduction
+<div class="paragraph">
+
+In this article I would like to discuss a new way to organise your personal or team projects as a data analyst by integrating **GitHub** in your workflow. 
+
+My main focus will be to show you how you can integrate **GitHub** with your **R** projects, however I will explain broadly how **GitHub** works and what are the main advantages of integrating it in all your projects, not just the **R** dependent ones.
+
+You might ask yourself what is **GitHub** and why use it? 
+
+Let me exemplify some situations that happend to me more than once and see if you can relate, and then we can discuss **GitHub**.
+
+</div>
+
+## Times when GitHub would have been useful
 
 <div class="paragraph">
 
-In this article I would like to discuss a bit about my experience in using GitHub in my R projects and how it helped me. I would also like to discuss how it can be used by a data analysis team to track what they are doing. Also, I will discuss how to install and work with `Git` from `R`.
+Countless times, while working on a project I had to copy a file and save it with a suffix like **\_v1**, **\_v2** or **\_my\_name**. It was almost always because the file was saved on a shared drive, multiple people were working on it and someone else had the file opened when I started working. 
 
-Have you ever had to come back to an older project and look through countless folders in a shared drive, maybe created by multiple people and not know which one is the latest version of the project. It happened to me more than once.
+Most of the times I would start working and not tell the other person to close it because it would be just *"a quick check-up"*. After some hours or days of *"quick check-ups"* on a read-only file I could either lose all the work I've done or save it in a different file, with one of the aforementioned suffixes. This situation can easily degenerate from a project that had one or two working files at first into one that now has multiple files. This usually means that someone in the team needs to spend a lot of time to integrate the files or directories in one cohesive project once more.
 
-Have you ever saved an analysis or a spreadsheet with your name and date, or something like **_v1**, **_v2**, or argued with collegues that they build upon an older version of the project?
+</div>
 
-I think everybody did that at some point. The solution for that is to start implementing a form of version control, and the one I want to discuss in this article is GitHub
+<div class="paragraph">
 
-</div> 
+Another situation that one can find frustrating is taking over someone else's project or report. 
+
+Depending on how organised they are, it can be a smooth transition or a nightmare that can take months to figure out. If the project is not organised in any cohesive way, and if the tasks that need to be executed are using different tools and folders that are not linked in any logical way, it can be very hard for someone taking over to remember the steps or change and repair something should it be needed.
+
+The person that developed the project or report might consider this process to be logical or has gotten used to it, however, the person taking over might have a difficult time adjusting or figuring out which of the many folders is the latest one.
+
+Although not a universal situation, I am sure a lot of people had to deal with similar scenarios, especially in teams where the work is segregated and each member has an area of expertise. With people having different ways of working, one can find it difficult to adjust to a project that is based on someone else's working style.
+
+</div>
+
+<div class="paragraph">
+
+How about this? Has this ever happened to you?
+
+Your team is tasked with creating a report for a department in your company. You create the report, it works just fine and you implement it in production. 
+
+Now, another department tells you they would like the same report with their data. Simple enough, you can just add the data. However, they would also like to include an extra feature so you add it and re-deploy the report.
+
+On top of this someone else thinks one of the original features should be changed just a bit, and maybe another one should be eliminated because it's redundant and it takes space in the final product without bringing any value.
+
+Everyone is happy with the report, although it is very different to the original, but hey, that is how it should be. You are creating reports for the business decision makers and this is how reports should evolve, organically. 
+
+However, the first department tells you that they still need the report in its original form.
+
+Since the current report is totally different from the original one, you have to spend a lot of time tracing back the original development of the report. You also have to keep in mind, that some of the changes where bug fixes, not feature changes. Those fixes will have to be included, so you will need to spend extra time trying to figure out what is a bug fix and what is a feature request by the second department. 
+
+</div>
 
 ## What is GitHub?
 
 <div class="paragraph">
 
-For those who have not worked with it until now, GitHub is a platform that allow you and your team, organise a project and better track all the changes that occur, version control.
+If any of the above examples apply to you, especially if all of them apply, you might want to look into implementing **GitHub** in your workflow. 
 
-It also allows you to experiment and if something goes array, it allows you to roll back the work that screwed up your project and go back to a point in which the project worked.
+So, here we get back to our original question, what is **GitHub**?
 
 </div>
 
 <div class="paragraph">
 
-It can do that because you create your original project and then you submit, actually the are called commits (we will get to that), some changes to the original project. The changes get recorded and you can check step by step what was implemented, what changed, who changed it and why.
+**GitHub** is a platform that provides software development version control using **Git**.
+
+Now, I know that the above needs no further explanation, however, I would like to ask you to bear with me since I spent some time phrasing the above in a non-developer way, so here it goes.
+
+Basically, **GitHub** is a platform that allows you to:
+
+  * Keep your project in one single place
+  * Have multiple team members working on the project at the same time
+  * Use the latest version of your project
+  * Test different features safely
+  * Role back to a previous step easily if needed
 
 </div>
 
-# Workflow
+<div class="paragraph">
+
+It can do this by simply recording each change that you submit to your project. 
+
+That means that you can see, download and use the latest version of the project and check its history by seeing the submitted changes. These changes are called **commits** and if you ever want to check the status of your project at a previous stage, you just need to go to the **commits** tab, click on the one that you consider it was the latest at which your project worked as you intended, and you will see it in that stage.
+
+</div>
 
 <div class="paragraph">
 
-Here is the workflow that you should should follow, as I see it.
+**GuitHub** provides a way for multiple people to work on the same project at the same time and **commit** changes to it, as long as they do not send conflicting **commits**.
+
+You can also create a separate branch so you can experiment with your project and if everything works well, you can just integrate it in the main project.
+
+</div>
+
+## Workflow
+
+<div class="paragraph">
+
+Here is the workflow that you should should follow, as I see it. This workflow is for teams that are just starting with **GitHub** and in time, each team will develop it's own workflow, however the below can be a good starting point.
 
   1. Your team wants to start a new project
-  2. You create a repository in GitHub (this will be your main source of truth)
+  2. You create a **repository** in **GitHub** (this will be your main source of truth)
   3. You divide the work within the team
-  4. Each member clones the repository on their local machine
+  4. Each member clones the **repository** on their local machine
   5. Each team member does their work
-  6. Each member pushes their work onto the main repository when it's done
-  7. Everytime you start a new task, or work on someting, it's a good idea to refresh the work on your local machine by pulling the repo once more
+  6. Each member pushes their work onto the main **repository** when it's done
+  7. Everytime you start a new task, or work on someting, it's a good idea to refresh the work on your local machine by pulling the **repository** once more
   8. Repeat from step 5 onwards
   
-These things can be done even if you work alone without any team members. It's a good idea to keep your work on Github as it allows you to better switch between machines and projects. Also it allows you to better understand decisions you've made previously.
+These things can be done even if you work alone without any team members. It's a good idea to keep your work on **Github** as it allows you to better switch between machines and projects. Also it allows you to better understand decisions you've taken previously.
 
 </div>
 
@@ -80,57 +144,59 @@ These things can be done even if you work alone without any team members. It's a
 
 Now, if you decided you want to give it a go, let's set everything up and then we can see how it can help you and your team.
 
-</div>
+Since the steps are quite numerous and differ slightly for each OS, I would like to recommend following the instructions in the book [Happy Git with R](https://happygitwithr.com/install-intro.html) by *Jenny Bryan* and her team. The book is excellent and the steps are clear and easy to follow.
 
-<div class="paragraph">
+Also, if you want to start using **Github**, the books is an excellent guide, way more detailed than this article, so I would really recommend reading it, or just having it as a refference if you encounter any problems.
 
-**Step 1:** Register an accont on [https://github.com](https://github.com). The account is free and if you have a small team, I think three people, you can work using GitHub just using free accounts. There are premium options, however, for the purpose of this discussion, they don't count and if you have a small team, it's the same.
-
-**Step 2:** Install R and Rstudio (if you didn't have them installed already)
- * R: [https://cran.r-project.org/](https://cran.r-project.org/)
- * RStudio: [https://rstudio.com/products/rstudio/download/#download](https://rstudio.com/products/rstudio/download/#download)
- 
-**Step 3:** Install Git (need to update this but it's a pain in the ass)
-
-**Step 4:** Config Git
-
-**Step 5:** Install a Git Client
-
-**Step 6:** Let's use Github
-
-# Use
-
-## Creating a Repository
-
-<div class="paragraph">
-
-In this part I would like to actually start using GitHub and show you how you can use it from the RStudio IDE and it's quite simple. So, let's start by creating a repository.
-
-You need to go to [https://github.com](https://github.com) and in the upper left hand corner you will see a button that says "NEW"
+So, click on the link, install **Git** and a **GitHub client** and I'll see you in a bit.
 
 </div>
 
-![Just an image](`r paste(getwd(), "/Screenshots/New_Button.png", sep = "")`)
-
 <div class="paragraph">
 
-Once you do that you will get a window asking you to name a new repository. It will look like this:
+All set up? Good!
+
+Fortunately, you will only have to go through this once when you install a machine, not every time you want to use or start a project.
+
+So, let's get started with the good stuff.
 
 </div>
 
-![New Repo Window](`r paste(getwd(), "/Screenshots/New_Repo_Window.png", sep = "")`)
+# Creating and using Repositories
 
 <div class="paragraph">
 
-Now we need to pick a new name. Let's call it `Hello-World`, leave it public and click on **Create Repository**. Now it will take you at you Repository, however this will be empty so we will need to create something in it. The window should look like this:
+In this part I would like to actually start using **GitHub** and show you how you can use it from the **RStudio IDE** and it's quite simple. So, let's start by creating a **repository**.
+
+In order to do so, you go to [https://github.com](https://github.com) and in the upper left hand corner you will see a green button that says **"NEW"**. Click on it.
+
+</div>
+
+![New Repository Button](`r paste(getwd(), "/Screenshots/New_Button.png", sep = "")`)
+
+<div class="paragraph">
+
+Once you do that you will get a window asking you to name a new **repository**. It will look like this:
+
+</div>
+
+![New Repository Window](`r paste(getwd(), "/Screenshots/New_Repo_Window.png", sep = "")`)
+
+<div class="paragraph">
+
+Now, we need to pick a name for said **repository**. Let's call it `Hello-World`. 
+  
+As you can also see, it allows you to select if you want your **repository** to be public or private. Let's make it public. Now we can click on **Create Repository**.
+
+Congrats, you have created your first **repository** (**repo** for short). This **repository** is empty and it will look a bit weird, like below:
 
 </div>
 
 ![Empty Repo Window](`r paste(getwd(), "/Screenshots/Empty_Repo_Window.png", sep = "")`)
 
-<div class="pragraph">
+<div class="paragraph">
 
-Now we need to do exactly what it says on the screen and choos either to create a new, upload an existing one (this is most likely what you will do if you already have running projects). I usually preffer to start by creating a README, so let's do that. CLick on that link and you will see this.
+As you can see, **GitHub** is very helpful in this case and askes us if we want to create a new project or we already have an existing one that we would like to upload. I like to start a **repo** by creating a **ReadMe** file. It can be very useful for someone else to see exactly what is intended with this project. You can also record the stages of the project or other essential information. Click on **README** and let's get started
 
 </div>
 
@@ -138,17 +204,21 @@ Now we need to do exactly what it says on the screen and choos either to create 
 
 <div class="paragraph">
 
-As you can see this is a simple markdown document. Here is a [link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to a very nice cheatsheet if you want to edit your README in a fancy way.
+The **README** in question is a simple **markdown** document. 
 
-Here it is recommended to write a short summary of your project and the scope. Of course, you can add the initial set up, or kick off dicussion, go nuts. For this we will just add the text "This is just a test version." and scroll down. You will see the following **commit** menu.
+For those of you who have not worked with **markdown** until now, it is a plain-text-formatting syntax that can be converted in a many output formats. In this case that format is **HTML**. 
+
+Here is a [link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to a very nice cheatsheet if you want to edit your **README** in a fancy way.
+
+Here it is recommended to write a short summary of your project and the scope. Of course, you can add the initial set up, or kick off dicussion, or whatever you feel like, go nuts! For this **repo** we will just add the text "This is just a test version." and scroll down. You will see the following **commit** menu.
 
 </div>
 
-![Innitial Commit](`r paste(getwd(), "/Screenshots/Readme_edit.png", sep = "")`)
+![Innitial Commit](`r paste(getwd(), "/Screenshots/Readme_Commit.png", sep = "")`)
 
 <div class="paragraph">
 
-As you can see, here we can select the name of the commit, remember, a commit is a submission of change, and some additional description if we want. We will leave it as is and click on **Commit new file**. This will take us to the Repo window. Here you will see the the latest state of your project. At the moment it just has a README file and looks like this:
+Here we can select the name of the **commit**, remember, a **commit** is a submission of change, and some additional description if we want. We will leave it as it is and click on **Commit new file**. This will take us to the **repo** window. Here you will be able to access the the latest state of your project. At the moment it just has a README file and looks like this:
 
 </div>
 
@@ -158,9 +228,9 @@ As you can see, here we can select the name of the commit, remember, a commit is
 
 <div class="paragraph">
 
-Now that we have a Repo we can connect it to R and see what we can do with it and how we can easily update GitHub from R.
+Now that we have a **repo** that we can connect it to **R** and see what we can do with it and how we can easily update **GitHub** from **R**.
 
-In order to do so, we need to click the **Clone or download** button and we will get a https link that will allow you to access your repo. it should look like this:
+So, how do we do that? Simple, we need to click the **Clone or download** button and we will get a *https* link that will allow you to access your **repository**. It should look like this:
 
 </div>
 
@@ -168,7 +238,7 @@ In order to do so, we need to click the **Clone or download** button and we will
 
 <div class="paragraph">
 
-Now for the good part, let's open RStudio and select File -> New Project and you will get a window asking to select the type of project. You will need to select the last option **Version Control**, then **Git**.
+Now for the good part, let's open **RStudio** and select File -> New Project and you will get a window asking to select the type of project. You will need to select the last option **Version Control**, then **Git**.
 
 </div>
 
@@ -184,11 +254,11 @@ This will get you to a window in which we can link the project with Git. You wil
 
 <div class="paragraph">
 
-Here we need to paste the link in the URL field. You can also select the name of the folder in which you will keep the project. I would suggest leaving the one suggested, and select the main folder in which you want to keep the project. In my case is **~Documents/Projec/R/Github** because this is where I keep all my GitHub related projects.
+Here we need to paste the link in the URL field. You can also select the name of the folder in which you will keep the project. I would suggest leaving the one suggested, and select the main folder in which you want to keep the project. In my case is **~Documents/Projects/R/Github** because this is where I keep all my **GitHub** related projects.
 
 All good?
 
-Congrats, you have just linked R to GitHub. Now we can work like we would in any other project, so let's start creating some scripts.
+Congrats, you have just linked **R** to **GitHub**. Now we can work like we would in any other project, so let's start creating some scripts.
 
 </div>
 
@@ -240,9 +310,9 @@ Now, as you can see, we have some files in the project.
   * My_Plot.png
   * Plot.R
   
-However, if we look in the project folder, we can find more files. Remember that it records just the changes from the last sumbission. These files is what is changed. So, let's upload them to Github (push them).
+However, if we look in the project folder, we can find more files. Remember that it records just the changes from the last sumbission. These files is what is changed. So, let's upload them to **GitHub** (push them).
 
-We can do that by pressing the **Commit** button. This will take us to a new tab in which we can select which file to commit. Let's check it and send the files to Github.
+We can do that by pressing the **Commit** button. This will take us to a new tab in which we can select which file to **commit**. Let's check it and send the files to **GitHub**.
 
 </div>
 
@@ -252,11 +322,11 @@ We can do that by pressing the **Commit** button. This will take us to a new tab
 
 As you can see, we have multiple sections here. The pane on the upper left side shows us the files to be commited. Let's select all of them by checking the box next to them.
 
-Now we need to commit them. Let's write a message that will tell us the stage of our project. We will write *Final commit* and press the commit button.
+Now we need to **commit** them. Let's write a message that will tell us the stage of our project. We will write *Final commit* and press the **commit** button.
 
 Now your changes have been submitted to your project and have a message attached. This is helpfull, however, we have one more simple step.
 
-As you can see, the tab is empty now, however, above the upper left pane a new message has appeared **Your branch is ahead of origin/master by 1 commit**. This just tells us that the local project has some commits that were not updated to Github. We can do that by pressing the push button (Green up arrow) on the right hand side of the tab.
+As you can see, the tab is empty now, however, above the upper left pane a new message has appeared **Your branch is ahead of origin/master by 1 commit**. This just tells us that the local project has some commits that were not updated to **GitHub**. We can do that by pressing the push button (Green up arrow) on the right hand side of the tab.
 
 Now, you should get a message like the below:
 
@@ -266,7 +336,7 @@ Now, you should get a message like the below:
 
 <div class="paragraph">
 
-Congrats, you have just commited your first project to Github. If you need to add more files, just do the same, add some files in R or in the project folder and commit and push them to Github. Just remember that if you want to add new files, It is a good practice to pull the project from Github before starting. You want to work on the latest version of the project.
+Congrats, you have just commited your first project to **GitHub**. If you need to add more files, just do the same, add some files in **R** or in the project folder and **commit** and push them to **GitHub**. Just remember that if you want to add new files, It is a good practice to pull the project from **GitHub** before starting. You want to work on the latest version of the project.
 
 </div>
 
@@ -274,13 +344,13 @@ Congrats, you have just commited your first project to Github. If you need to ad
 
 <div class="paragraph">
 
-You might ask yourself, why add this to my workflow, it just seems like an extra layer that I need to observe?
+You might ask yourself, why add this to my workflow? It just seems like an extra layer that I need to observe.
 
-Well, yes, it can be an extra layer, however, as I mentioned in the begining it is a great tool to manage you projects in just one place. It is also a great tool to make sure you always use the latest version of your project, you just need to link the repo to R and pull the repo.
+Well, yes, it can be an extra layer, however, as I mentioned in the begining it is a great tool to manage you projects in just one place. It is also a great tool to make sure you always use the latest version of your project, you just need to link the **repo** to **R** and pull the **repo**.
 
 It also is a great tool that can help you understand why you have taken some decisions, or what were the steps you took from the start of the project to the current standing.
 
-The last major benefit can be the fact that you can experiment with your projects as much as you like and if you screw something up, you can just delete the last commit, or multiple commits until you arrive at the last version that worked. It is very easy to roll back your project.
+The last major benefit can be the fact that you can experiment with your projects as much as you like and if you screw something up, you can just delete the last **commit**, or multiple commits until you arrive at the last version that worked. It is very easy to roll back your project.
 
 </div>
 
@@ -288,15 +358,13 @@ The last major benefit can be the fact that you can experiment with your project
 
 <div class="paragraph">
 
-I hope in this article that I managed to make you interested enough in Github to test it out. You don't have to start with your very complex projects, I would suggest starting with small projects so you and your team can get used to it.
+I hope in this article that I managed to make you interested enough in **GitHub** to test it out. You don't have to start with your very complex projects, I would suggest starting with small projects so you and your team can get used to it.
 
-It takes a surprisingly short time to get used to it. When I started using Github for my own projects it was a good way for me to keep some data in one place so I can share it between different device. Then I started keeping my scripts there as well and I've noticed that it's way better for me to have the in just one place.
+It takes a surprisingly short time to get used to it. When I started using **GitHub** for my own projects it was a good way for me to keep some data in one place so I can share it between different devices. Then I started keeping my scripts there as well and I've noticed that it's way better for me to have the in just one place.
 
-Now, I do not need to make sure I am working on the right folder, or the latest, I just need to pull the project from Github and start working on it.
+Now, I do not need to make sure I am working on the right folder, or the latest, I just need to pull the project from **GitHub** and start working on it.
 
 </div>
-
-<div class="paragraph">
 
 If you consider that it is something you would like to try for your team, please let me know how it went and if you encountered any problems.
 
