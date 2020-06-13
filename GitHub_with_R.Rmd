@@ -10,10 +10,14 @@ css: article.css
 
 <div class = "tags">
 
+**Vlad Aluas**
+
 </div>
 
 
 <div class = "time">
+
+**15 min read**
 
 </div>
 
@@ -29,11 +33,11 @@ ________________
 
 In this article I would like to discuss a new way to organise your personal or team projects as a data analyst by integrating **GitHub** in your workflow. 
 
-My main focus will be to show you how you can integrate **GitHub** with your **R** projects, however I will explain broadly how **GitHub** works and what are the main advantages of integrating it in all your projects, not just the **R** dependent ones.
+My main focus will be to show you how you can integrate **GitHub** with your **R** projects, however I will explain broadly how **GitHub** works and what are the main advantages of integrating it in all your projects, not just the **R** related ones.
 
 You might ask yourself what is **GitHub** and why use it? 
 
-Let me exemplify some situations that happend to me more than once and see if you can relate, and then we can discuss **GitHub**.
+Let me exemplify some situations that happened to me more than once and see if you can relate, and then we can discuss **GitHub**.
 
 </div>
 
@@ -73,7 +77,7 @@ Everyone is happy with the report, although it is very different to the original
 
 However, the first department tells you that they still need the report in its original form.
 
-Since the current report is totally different from the original one, you have to spend a lot of time tracing back the original development of the report. You also have to keep in mind, that some of the changes where bug fixes, not feature changes. Those fixes will have to be included, so you will need to spend extra time trying to figure out what is a bug fix and what is a feature request by the second department. 
+Since the current report is totally different from the original one, you have to spend a lot of time tracing back the original development of the report. You also have to keep in mind, that some of the changes where bug fixes, not feature changes. Those fixes will have to be included, so you will need to spend extra time trying to figure out what is a bug fix and what is a feature requested by the second department. 
 
 </div>
 
@@ -107,15 +111,15 @@ Basically, **GitHub** is a platform that allows you to:
 
 It can do this by simply recording each change that you submit to your project. 
 
-That means that you can see, download and use the latest version of the project and check its history by seeing the submitted changes. These changes are called **commits** and if you ever want to check the status of your project at a previous stage, you just need to go to the **commits** tab, click on the one that you consider it was the latest at which your project worked as you intended, and you will see it in that stage.
+That means that you can see, download and use the latest version of the project and check its history by seeing the submitted changes. The changes are called **commits** (if you want to use fancy **Git** language) and they are snapshots of past stages of your project. If you ever want to check the status of your project at a previous stage, you just need to go to the **commits** tab, click on the one that you consider it was the latest at which your project worked as intended, and voilà, your project works again.
 
 </div>
 
 <div class="paragraph">
 
-**GuitHub** provides a way for multiple people to work on the same project at the same time and **commit** changes to it, as long as they do not send conflicting **commits**.
+**GitHub** provides a way for multiple people to work on the same project at the same time and **commit** changes to it, as long as they do not send conflicting **commits**.
 
-You can also create a separate branch so you can experiment with your project and if everything works well, you can just integrate it in the main project.
+You can also create a separate branch so you can experiment with your project and if everything works well, you can just integrate it in the main branch of the project.
 
 </div>
 
@@ -123,7 +127,7 @@ You can also create a separate branch so you can experiment with your project an
 
 <div class="paragraph">
 
-Here is the workflow that you should should follow, as I see it. This workflow is for teams that are just starting with **GitHub** and in time, each team will develop it's own workflow, however the below can be a good starting point.
+Here is the workflow that you should follow, as I see it. This workflow is for teams that are just starting with **GitHub** and in time, each team will develop it's own workflow, however the below can be a good starting point.
 
   1. Your team wants to start a new project
   2. You create a **repository** in **GitHub** (this will be your main source of truth)
@@ -131,8 +135,10 @@ Here is the workflow that you should should follow, as I see it. This workflow i
   4. Each member clones the **repository** on their local machine
   5. Each team member does their work
   6. Each member pushes their work onto the main **repository** when it's done
-  7. Everytime you start a new task, or work on someting, it's a good idea to refresh the work on your local machine by pulling the **repository** once more
-  8. Repeat from step 5 onwards
+  7. Repeat from step 5 onward
+  
+  
+Every time you start a new task, or work on something, it's a good idea to refresh the work on your local machine by pulling the **repository** once more.
   
 These things can be done even if you work alone without any team members. It's a good idea to keep your work on **Github** as it allows you to better switch between machines and projects. Also it allows you to better understand decisions you've taken previously.
 
@@ -142,11 +148,11 @@ These things can be done even if you work alone without any team members. It's a
 
 <div class="paragraph">
 
-Now, if you decided you want to give it a go, let's set everything up and then we can see how it can help you and your team.
+If you decided you want to give it a go, let's set everything up for you and your team.
 
 Since the steps are quite numerous and differ slightly for each OS, I would like to recommend following the instructions in the book [Happy Git with R](https://happygitwithr.com/install-intro.html) by *Jenny Bryan* and her team. The book is excellent and the steps are clear and easy to follow.
 
-Also, if you want to start using **Github**, the books is an excellent guide, way more detailed than this article, so I would really recommend reading it, or just having it as a refference if you encounter any problems.
+Also, if you want to start using **Github**, the book is an excellent guide, way more detailed than this article, so I would really recommend reading it, or just having it as a reference if you encounter any problems.
 
 So, click on the link, install **Git** and a **GitHub client** and I'll see you in a bit.
 
@@ -166,9 +172,9 @@ So, let's get started with the good stuff.
 
 <div class="paragraph">
 
-In this part I would like to actually start using **GitHub** and show you how you can use it from the **RStudio IDE** and it's quite simple. So, let's start by creating a **repository**.
+In this part I would like to show you how to use **GitHub** from the **RStudio IDE** and you will see that it is quite simple and straightforward to use. 
 
-In order to do so, you go to [https://github.com](https://github.com) and in the upper left hand corner you will see a green button that says **"NEW"**. Click on it.
+So, let's starts by creating a **repository**. You will need to go to [https://github.com](https://github.com) and in the upper left hand corner you will see a green button that says **"NEW"**. Click on it.
 
 </div>
 
@@ -186,7 +192,7 @@ Once you do that you will get a window asking you to name a new **repository**. 
 
 Now, we need to pick a name for said **repository**. Let's call it `Hello-World`. 
   
-As you can also see, it allows you to select if you want your **repository** to be public or private. Let's make it public. Now we can click on **Create Repository**.
+As you can also see, it allows you to select whether your **repository** should be public or private. Let's make it public. Now we can click on **Create Repository**.
 
 Congrats, you have created your first **repository** (**repo** for short). This **repository** is empty and it will look a bit weird, like below:
 
@@ -196,7 +202,7 @@ Congrats, you have created your first **repository** (**repo** for short). This 
 
 <div class="paragraph">
 
-As you can see, **GitHub** is very helpful in this case and askes us if we want to create a new project or we already have an existing one that we would like to upload. I like to start a **repo** by creating a **ReadMe** file. It can be very useful for someone else to see exactly what is intended with this project. You can also record the stages of the project or other essential information. Click on **README** and let's get started
+As you can see, **GitHub** is very helpful in this case and asks us if we want to create a new project or we already have an existing one that we would like to upload. I like to start a **repo** by creating a **ReadMe** file. It can be very useful for someone else to see exactly what is intended with this project. You can also record the stages of the project or other essential information. Click on **README** and let's get started
 
 </div>
 
@@ -206,11 +212,11 @@ As you can see, **GitHub** is very helpful in this case and askes us if we want 
 
 The **README** in question is a simple **markdown** document. 
 
-For those of you who have not worked with **markdown** until now, it is a plain-text-formatting syntax that can be converted in a many output formats. In this case that format is **HTML**. 
+For those of you who have not worked with **markdown** until now, it is a plain-text-formatting syntax that can be converted in many output formats. In this case that format is **HTML**. 
 
 Here is a [link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to a very nice cheatsheet if you want to edit your **README** in a fancy way.
 
-Here it is recommended to write a short summary of your project and the scope. Of course, you can add the initial set up, or kick off dicussion, or whatever you feel like, go nuts! For this **repo** we will just add the text "This is just a test version." and scroll down. You will see the following **commit** menu.
+It is recommended to write a short summary of your project and the scope. Of course, you can add the initial set up, or kick off discussion, or whatever you feel like, go nuts! For this **repo** we will just add the text "This is just a test version." and scroll down. You will see the following **commit** menu.
 
 </div>
 
@@ -218,7 +224,7 @@ Here it is recommended to write a short summary of your project and the scope. O
 
 <div class="paragraph">
 
-Here we can select the name of the **commit**, remember, a **commit** is a submission of change, and some additional description if we want. We will leave it as it is and click on **Commit new file**. This will take us to the **repo** window. Here you will be able to access the the latest state of your project. At the moment it just has a README file and looks like this:
+We can select the name of the **commit**, remember, a **commit** is a submission of change, and some additional description if we want. We will leave it as it is and click on **Commit new file**. This will take us to the **repo** window. Here you will be able to access the latest state of your project. At the moment it only has a **README** file and looks like this:
 
 </div>
 
@@ -230,7 +236,7 @@ Here we can select the name of the **commit**, remember, a **commit** is a submi
 
 Now that we have a **repo** that we can connect it to **R** and see what we can do with it and how we can easily update **GitHub** from **R**.
 
-So, how do we do that? Simple, we need to click the **Clone or download** button and we will get a *https* link that will allow you to access your **repository**. It should look like this:
+So, how do we do that? Simple, we need to click the **Clone or download** button and we will get a *https* link that will allow us to access the **repository**. It should look like this:
 
 </div>
 
@@ -238,7 +244,7 @@ So, how do we do that? Simple, we need to click the **Clone or download** button
 
 <div class="paragraph">
 
-Now for the good part, let's open **RStudio** and select File -> New Project and you will get a window asking to select the type of project. You will need to select the last option **Version Control**, then **Git**.
+Now for the good part, let's open **RStudio** and select **File** -> **New Project** and you will get a window asking to select the type of project. You will need to select the last option **Version Control**, then **Git**.
 
 </div>
 
@@ -246,7 +252,7 @@ Now for the good part, let's open **RStudio** and select File -> New Project and
 
 <div class="paragraph">
 
-This will get you to a window in which we can link the project with Git. You will see a window looking like this:
+This will get you to a window in which we can link the project with **Git**. You will see a window looking like this:
 
 </div>
 
@@ -281,7 +287,7 @@ ggplot(data = mtcars,
 
 <div class="paragraph">
 
-Now that we have the script for a plot. Let us also save it and then we can check the status of our project.
+We have the script for a plot so let's also save it. We don't want to lose all that hard work. Finally, we can check the status of our project.
 
 </div>
 
@@ -294,7 +300,7 @@ ggsave(filename = "My_Plot.png",
 
 Save the script **Plot.R**.
 
-Now, we can check the status of our project in the **Git** tab, next to **Environment**.
+We can check the status of our project in the **Git** tab, next to **Environment**.
 
 </div>
 
@@ -310,25 +316,24 @@ Now, as you can see, we have some files in the project.
   * My_Plot.png
   * Plot.R
   
-However, if we look in the project folder, we can find more files. Remember that it records just the changes from the last sumbission. These files is what is changed. So, let's upload them to **GitHub** (push them).
+However, if we look in the project folder, we can find more files. Remember that it records just the changes from the last submission. So, let's push them to **GitHub**.
 
-We can do that by pressing the **Commit** button. This will take us to a new tab in which we can select which file to **commit**. Let's check it and send the files to **GitHub**.
-
+We can do that by clicking the **Commit** button that will take us to a new tab in which we can select the file to **commit**.
 </div>
 
 ![Commit Tab](`r paste(getwd(), "/Screenshots/Commit_Tab.png", sep = "")`)
 
 <div class="paragraph">
 
-As you can see, we have multiple sections here. The pane on the upper left side shows us the files to be commited. Let's select all of them by checking the box next to them.
+As you can see, we have multiple sections here. The pane on the upper left side shows us the files to be committed. Let's select all of them by checking the box next to them.
 
-Now we need to **commit** them. Let's write a message that will tell us the stage of our project. We will write *Final commit* and press the **commit** button.
+Now we need to **commit** them. Let's write a message that will tell us the stage of our project in the upper right pane (*e.g.* Final commit).
 
-Now your changes have been submitted to your project and have a message attached. This is helpfull, however, we have one more simple step.
+Once you click **commit** the changes have been submitted to the project and have a message attached. This is helpful, however, we have one more simple step to complete the process.
 
-As you can see, the tab is empty now, however, above the upper left pane a new message has appeared **Your branch is ahead of origin/master by 1 commit**. This just tells us that the local project has some commits that were not updated to **GitHub**. We can do that by pressing the push button (Green up arrow) on the right hand side of the tab.
+As you can see, the tab is empty now, however, above the upper left pane a new message has appeared **Your branch is ahead of origin/master by 1 commit**. This just tells us that the local project has some commits that were not updated to **GitHub**. We can do that by clicking the push button (Green up arrow) on the right hand side of the tab.
 
-Now, you should get a message like the below:
+We should get a message like the below:
 
 </div>
 
@@ -346,11 +351,11 @@ Congrats, you have just commited your first project to **GitHub**. If you need t
 
 You might ask yourself, why add this to my workflow? It just seems like an extra layer that I need to observe.
 
-Well, yes, it can be an extra layer, however, as I mentioned in the begining it is a great tool to manage you projects in just one place. It is also a great tool to make sure you always use the latest version of your project, you just need to link the **repo** to **R** and pull the **repo**.
+Well, yes, it can be an extra layer, however, as I mentioned in the beginning it is a great tool to manage you projects in just one place. It is also a great tool to make sure you always use the latest version of your project, you just need to link the **repo** to **R** and pull the **repo**.
 
-It also is a great tool that can help you understand why you have taken some decisions, or what were the steps you took from the start of the project to the current standing.
+It is also a great tool that can help you trace back the reasons behind some of the decisions you have taken. Another advantage is that it records your project step by step so it is easy to review your workflow and possibly recreate it in another similar project.
 
-The last major benefit can be the fact that you can experiment with your projects as much as you like and if you screw something up, you can just delete the last **commit**, or multiple commits until you arrive at the last version that worked. It is very easy to roll back your project.
+The last major benefit can be the fact that you can experiment with your projects as much as you like and if you screw something up, you can just delete the last **commit**, or multiple commits until you get to the last version that worked. It is very easy to roll back your project.
 
 </div>
 
@@ -358,15 +363,17 @@ The last major benefit can be the fact that you can experiment with your project
 
 <div class="paragraph">
 
-I hope in this article that I managed to make you interested enough in **GitHub** to test it out. You don't have to start with your very complex projects, I would suggest starting with small projects so you and your team can get used to it.
+I hope that through this article that I managed to make you interested enough in **GitHub** to test it out. You don't have to start with very complex projects, I would suggest starting with small projects so you and your team can get comfortable with using it.
 
-It takes a surprisingly short time to get used to it. When I started using **GitHub** for my own projects it was a good way for me to keep some data in one place so I can share it between different devices. Then I started keeping my scripts there as well and I've noticed that it's way better for me to have the in just one place.
+It takes a surprisingly short time to adjust to the new work style. When I started using **GitHub** for my own projects it was a good way for me to store some data in one place so I can share it between different devices. Then I started keeping my scripts there as well and I've noticed that it's way better for me to have them in just one place.
 
-Now, I do not need to make sure I am working on the right folder, or the latest, I just need to pull the project from **GitHub** and start working on it.
+Now, I no longer need to make sure I am working on the right folder, or the latest, I just need to pull the project from **GitHub** and start working on it.
 
 </div>
 
-If you consider that it is something you would like to try for your team, please let me know how it went and if you encountered any problems.
+<div class="paragraph">
+
+If you consider that it is something you would like to try for your team, please let me know how it went and if you like it.
 
 </div>
 
